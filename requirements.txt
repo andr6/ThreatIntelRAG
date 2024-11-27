@@ -1,0 +1,10 @@
+requests
+beautifulsoup4
+langchain-community
+feedparser
+newspaper3k
+listparser
+lxml_html_clean
+langchain-text-splitters
+langchain-ollama
+langchain-chroma
