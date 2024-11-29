@@ -1,0 +1,25 @@
+flowchart TD
+    A1[RSS Sources] --> B[Python Jupyter Notebook]
+    A2[CSV Sources] --> B
+    A3[PDF Sources] --> B
+    
+    B --> C{Langchain}
+    C --> |Convert to Documents| D[Document Transformation]
+    
+    D --> E{ChromaDB}
+    E --> |Create Vectorstore| F[Indexed Vector Embeddings]
+    
+    F --> G{Ollama LLM}
+    G --> |Query Vectorstore| H[Retrieval & Generation]
+    
+    H --> I[User Query Response]
+
+    classDef sources fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef process fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef storage fill:#bfb,stroke:#333,stroke-width:2px;
+    classDef model fill:#fb0,stroke:#333,stroke-width:2px;
+
+    class A1,A2,A3 sources;
+    class B,C,D process;
+    class E,F storage;
+    class G,H,I model;
